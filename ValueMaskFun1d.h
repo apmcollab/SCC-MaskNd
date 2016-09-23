@@ -2,7 +2,7 @@
 #include <functional>
 using namespace std;
 
-#include "GridFunctionNd/UCLAQ_GridFunction1d.h"
+#include "GridFunctionNd/SCC_GridFunction1d.h"
 #include "ValueStepFun.h"
 
 #ifndef _ValueMaskFun1d_
@@ -64,7 +64,7 @@ public:
      * transition is smooth if F is smooth.
      *
     */
-    void  createMinMask(double funMin, double funMax,const UCLAQ::GridFunction1d& F,UCLAQ::GridFunction1d& maskFun)
+    void  createMinMask(double funMin, double funMax,const SCC::GridFunction1d& F,SCC::GridFunction1d& maskFun)
     {
     	valueStepFun.initialize(funMin,funMax,0.0,1.0,polyDiffOrder);
     	maskFun.initialize(F);
@@ -79,7 +79,7 @@ public:
      * transition is smooth if F is smooth.
      *
     */
-    void  createMaxMask(double funMin, double funMax,const UCLAQ::GridFunction1d& F,UCLAQ::GridFunction1d& maskFun)
+    void  createMaxMask(double funMin, double funMax,const SCC::GridFunction1d& F,SCC::GridFunction1d& maskFun)
     {
     	valueStepFun.initialize(funMin,funMax,1.0,0.0,polyDiffOrder);
     	maskFun.initialize(F);
@@ -95,7 +95,7 @@ public:
      * transition is smooth if F is smooth.
      *
      */
-    void applyMinMask(double funMin, double funMax, UCLAQ::GridFunction1d& F)
+    void applyMinMask(double funMin, double funMax, SCC::GridFunction1d& F)
     {
     	valueStepFun.initialize(funMin,funMax,0.0,1.0,polyDiffOrder);
     	mask.initialize(F);
@@ -117,7 +117,7 @@ public:
      * transition is smooth if F is smooth.
      *
      */
-    void applyMaxMask(double funMin, double funMax, UCLAQ::GridFunction1d& F)
+    void applyMaxMask(double funMin, double funMax, SCC::GridFunction1d& F)
     {
     	valueStepFun.initialize(funMin,funMax,1.0,0.0,polyDiffOrder);
     	mask.initialize(F);
@@ -139,7 +139,7 @@ public:
      * transition is smooth if F is smooth.
      *
      */
-    void applyMinMask(double funMin, double funMax,const UCLAQ::GridFunction1d& F,UCLAQ::GridFunction1d& Fout)
+    void applyMinMask(double funMin, double funMax,const SCC::GridFunction1d& F,SCC::GridFunction1d& Fout)
     {
     	valueStepFun.initialize(funMin,funMax,0.0,1.0,polyDiffOrder);
     	Fout.initialize(F);
@@ -161,7 +161,7 @@ public:
      * transition is smooth if F is smooth.
      *
      */
-    void applyMaxMask(double funMin, double funMax, const UCLAQ::GridFunction1d& F,UCLAQ::GridFunction1d& Fout)
+    void applyMaxMask(double funMin, double funMax, const SCC::GridFunction1d& F,SCC::GridFunction1d& Fout)
     {
     	valueStepFun.initialize(funMin,funMax,1.0,0.0,polyDiffOrder);
     	Fout.initialize(F);
@@ -177,7 +177,7 @@ public:
 
 
 
-    UCLAQ::GridFunction1d       mask;
+    SCC::GridFunction1d       mask;
     ValueStepFun        valueStepFun;
     int polyDiffOrder;
 };

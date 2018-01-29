@@ -2,7 +2,7 @@
 #include <functional>
 using namespace std;
 
-#include "GridFunctionNd/UCLAQ_GridFunction1d.h"
+#include "GridFunctionNd/SCC_GridFunction1d.h"
 #include "MollifierNd/SmoothPolyStep.h"
 #include "RectMaskFun1d.h"
 

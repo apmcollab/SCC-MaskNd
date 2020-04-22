@@ -1,6 +1,5 @@
 #include <cmath>
 #include <functional>
-using namespace std;
 
 #include "GridFunctionNd/SCC_GridFunction2d.h"
 #include "ValueStepFun.h"

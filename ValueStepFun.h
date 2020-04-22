@@ -1,6 +1,5 @@
 #include <cmath>
 #include <functional>
-using namespace std;
 
 #include "GridFunctionNd/SCC_GridFunction1d.h"
 #include "MollifierNd/SmoothPolyStep.h"
@@ -86,7 +85,7 @@ public:
     this->funMax             = funMax;
 
     this->centValue          = (funMax + funMin)/2.0;
-    this->transitionDistance = abs(funMax-funMin);
+    this->transitionDistance = std::abs(funMax-funMin);
 
     bool  stepDownFlag  = false;
     double stepStrength = 1.0;
